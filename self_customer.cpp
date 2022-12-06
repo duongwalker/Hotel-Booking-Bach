@@ -1,80 +1,75 @@
 #include "self_customer.hh"
-
-
-Customer::Customer(){
-    this->reservation_num = 0;
-}
-
-Customer::Customer(bool create_ReservedNumber){
+#include <vector>
+using namespace std;
+Customer::Customer()
+{
     int reservedNumber = randomReservedNum();
     this->setReservationNumber(reservedNumber);
 }
 
-void Customer::setName(string name) {
+void Customer::setName(string name)
+{
     this->name = name;
-
 };
 
-void Customer::setRentedRooms(int _rentedRooms[]) {
-    int i = 0;
-    while(this->rented_Rooms != nullptr) {
-        //cout << _
-    }
+void Customer::setRentedRooms(int _rentedRooms[], int n)
+{
+    this->rented_Rooms.assign(_rentedRooms, _rentedRooms + n);
 };
 
-void Customer::setRentedDays(int rentedDays) {
-    this->rented_Days = rentedDays;
-    cout << "Days rented: " << rented_Days;
+void Customer::setRentedDays(int _rentedDays[], int n)
+{
+    this->rented_Days.assign(_rentedDays, _rentedDays + n);
 };
 
-void Customer::setReservationNumber(int reservedNumber) {
+void Customer::setReservationNumber(int reservedNumber)
+{
     this->reservation_num = reservedNumber;
 };
 
-int Customer::getReservationNumber() {
+int Customer::getReservationNumber()
+{
     return this->reservation_num;
 }
 
-void Customer::setCustomerInfo (string name, int rented_rooms[], int rented_days) {
-    
-    this->name = name;
-    this->rented_Days = rented_days;
+void Customer::setCustomerInfo(string name, int rented_rooms[], int rented_days[], int n)
+{
 
-    for (int i = 0; i < 80; i++) {
-        this->rented_Rooms[i] = rented_rooms[i];
-    }
+    this->name = name;
+    this->setRentedDays(rented_days, n);
+    this->setRentedRooms(rented_rooms, n);
 };
 
-void Customer::getCustomerInfo () {
-    cout << "Reservation number: "<< this->reservation_num << endl;
+void Customer::getCustomerInfo()
+{
+    cout << "Reservation number: " << this->reservation_num << endl;
     cout << "Name: " << this->name << endl;
-    cout << "You booked: " << this->getTotalRoom() << " rooms" << endl; 
-    cout << "Rented rooms: " << endl;
-    for(int i = 0; i < 80 ; i++){
-        if (this->rented_Rooms[i] != 0) {
-           // cout << i << " ";
-        };
+    cout << "You booked: " << this->getTotalRoom() << " rooms" << endl;
+    cout << "Rented rooms: ";
+    for (int e : this->rented_Rooms)
+    {
+        cout << e + 1 << " ";
     }
     cout << endl;
-    //cout << "Number of rented days: " << this->rented_Days << endl; 
-
+    // cout << "Number of rented days: " << this->rented_Days << endl;
 }
 
-
-void Customer::setTotalRoom(int total_room) {
+void Customer::setTotalRoom(int total_room)
+{
     this->totalRoom = total_room;
 }
 
-
-
-int Customer::getTotalRoom() {
+int Customer::getTotalRoom()
+{
     return this->totalRoom;
 }
 
-string Customer::getName() {
-    cout << this->name << endl << endl<< endl<< endl<< endl;
+string Customer::getName()
+{
+    cout << this->name << endl
+         << endl
+         << endl
+         << endl
+         << endl;
     return this->name;
 }
-
-
-

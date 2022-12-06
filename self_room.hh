@@ -8,11 +8,11 @@ private:
     int room_price = 0;
     bool is_single = true;
     bool is_reserved = true;
-    bool is_available = true;
     int discount = 0;
     int totalRoom = 0;
     int reservation_num = 0;
     int rent_days = 0;
+
 public:
     Room();
     void getRoomInfo();
@@ -24,12 +24,11 @@ public:
     int getReservationNumber();
     void setDiscount(int);
     int getDiscount();
-    void setRentDays (int);
+    void setRentDays(int);
     int getRentDays();
-    
+
     void setRoomNum(int);
     int getRoomNum();
-    
+
     void setRoomInfo(int, bool, bool, int, int, int);
-    
 };

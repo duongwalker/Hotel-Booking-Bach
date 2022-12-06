@@ -3,85 +3,101 @@
 #include <time.h>
 using namespace std;
 
-Room::Room(){
+Room::Room()
+{
     this->room_price = 0;
+    this->is_reserved = false;
 }
 
-void Room::getRoomInfo() {
+void Room::getRoomInfo()
+{
     cout << "Room number: " << this->room_num << endl;
     cout << "Room price: " << this->room_price << endl;
     cout << "Room discount: " << this->discount << endl;
     cout << (this->is_single ? "This is a single room" : "This is a double room") << endl;
 
-    if (this->is_available) {
+    if (this->is_reserved)
+    {
         cout << "This room is available";
     }
-    else {
+    else
+    {
         cout << "This room has been reserved for " << this->rent_days << " days" << endl;
     }
 
     cout << endl;
 };
 
-
-void Room::setReserved(bool available) {
-    this->is_available = available;
+void Room::setReserved(bool _available)
+{
+    this->is_reserved = _available;
 };
 
-void Room::setPrice(int price) {
+void Room::setPrice(int price)
+{
     this->room_price = price;
-    
 };
 
-void Room::setDiscount(int randDiscount) {
-    srand (time(NULL));
-    randDiscount = (rand() % 2 * 10)/100;
+void Room::setDiscount(int randDiscount)
+{
+    srand(time(NULL));
+    randDiscount = (rand() % 2 * 10) / 100;
     this->discount = randDiscount;
     cout << "The discount are " << randDiscount << endl;
 };
 
-bool Room::isSingleRoom() {
+bool Room::isSingleRoom()
+{
     return this->is_single;
 };
 
-bool Room::isReserved(){
-    return !this->is_available;
+bool Room::isReserved()
+{
+    return this->is_reserved;
 }
 
-void Room::setReservationNumber(int reservation_num) {
+void Room::setReservationNumber(int reservation_num)
+{
     this->reservation_num = reservation_num;
 };
 
-int Room::getReservationNumber() {
+int Room::getReservationNumber()
+{
     return this->reservation_num;
 };
 
-void Room::setRoomInfo(int price, bool is_single, bool available, int discount, int reserved_num, int room_num) {
+void Room::setRoomInfo(int price, bool is_single, bool _reserved, int discount, int reserved_num, int room_num)
+{
     this->room_price = price;
     this->is_single = is_single;
-    this->is_available = available;
+    this->is_reserved = _reserved;
     this->discount = discount;
     this->room_num = room_num;
+    this->reservation_num = reserved_num;
 };
 
-void Room::setRentDays(int days){
+void Room::setRentDays(int days)
+{
     this->rent_days = days;
 }
 
-int Room::getRentDays() {
+int Room::getRentDays()
+{
     return this->rent_days;
 }
 
-int Room::getDiscount() {
+int Room::getDiscount()
+{
     cout << "The discount is " << this->discount << endl;
     return this->discount;
 }
 
-
-void Room::setRoomNum(int roomNum) {
+void Room::setRoomNum(int roomNum)
+{
     this->room_num = roomNum;
 }
 
-int Room::getRoomNum() {
+int Room::getRoomNum()
+{
     return this->room_num;
 }
