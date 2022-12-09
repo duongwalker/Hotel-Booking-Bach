@@ -51,14 +51,15 @@ bool Hotel::booking(int days[], Customer *a)
     int rent_room_index = 0;
 
     cout << "What is your name? ";
+    cin.ignore();
     getline(cin, customerName);
     a->setName(customerName);
 
-    cout << "How many rooms do you want to book? ";
+    cout << "Enter number of rooms: ";
     cin >> roomAmount;
     a->setTotalRoom(roomAmount);
 
-    cout << "How many single rooms do you want to book? ";
+    cout << "Enter number of single rooms: ";
     cin >> singleRoomAmount;
     cout << endl;
     int doubleRoomAmount = roomAmount - singleRoomAmount;
@@ -115,3 +116,8 @@ void Hotel::display(Customer *a)
 {
     a->getCustomerInfo();
 };
+
+
+
+
+

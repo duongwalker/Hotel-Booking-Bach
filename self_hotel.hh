@@ -21,4 +21,6 @@ public:
     void display(Customer *);
     bool booking(int[], Customer *);
     int edit();
+
+  
 };
