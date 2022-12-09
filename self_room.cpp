@@ -99,5 +99,6 @@ void Room::setRoomNum(int roomNum)
 
 int Room::getRoomNum()
 {
+    cout << "Duong fixed 2";
     return this->room_num;
 }

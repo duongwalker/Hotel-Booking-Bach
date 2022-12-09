@@ -29,7 +29,7 @@ int main() {
             break;
          case 5:
             cout << "Thank you for visit our hotel";
-            cout << "Alo";
+            cout << "duong fixed 2";
             return 0;
          default:
             cout << "Invalid command. Please try again!";

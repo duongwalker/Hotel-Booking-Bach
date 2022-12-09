@@ -7,3 +7,4 @@
 int randomAmountRoom();
 
 int randomReservedNum();
+int duongfixed2();

@@ -31,4 +31,5 @@ public:
     int getRoomNum();
 
     void setRoomInfo(int, bool, bool, int, int, int);
+    int duongfixed2();
 };

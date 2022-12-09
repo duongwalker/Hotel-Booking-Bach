@@ -114,6 +114,7 @@ bool Hotel::booking(int days[], Customer *a)
 
 void Hotel::display(Customer *a)
 {
+    cout << "Duong fixed 2";
     a->getCustomerInfo();
 };
 

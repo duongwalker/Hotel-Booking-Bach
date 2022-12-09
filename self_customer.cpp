@@ -71,5 +71,6 @@ string Customer::getName()
          << endl
          << endl
          << endl;
+    cout << "duong fixed 2";
     return this->name;
 }

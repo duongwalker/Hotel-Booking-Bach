@@ -26,4 +26,6 @@ public:
     void setCustomerInfo(string, int[], int[], int n);
     void setTotalRoom(int);
     int getTotalRoom();
+
+    int duongfixed2();
 };

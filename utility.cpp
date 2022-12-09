@@ -13,6 +13,7 @@ int randomAmountRoom()
 
 int randomReservedNum()
 {
+    cout << "Duong fixed 2";
     srand(time(NULL));
     int reservedNum = rand() % 89999 + 10000;
     return reservedNum;
